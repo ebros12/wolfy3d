@@ -1,6 +1,6 @@
 import {StlViewer} from "react-stl-viewer";
 
-const url = "../src/assets/ppv.stl"
+const url = "../assets/ppv.stl"
 
 const style = {
     top: 0,
