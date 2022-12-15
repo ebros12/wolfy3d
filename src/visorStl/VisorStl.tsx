@@ -1,6 +1,6 @@
 import {StlViewer} from "react-stl-viewer";
 
-const url = "https://ebros.cl/wolfy/stl/ppv.stl"
+const url = "ppv.stl"
 
 const style = {
     top: 0,
