@@ -1,6 +1,7 @@
 import {StlViewer} from "react-stl-viewer";
 
-const url = "../src/assets/ppv.stl"
+
+const url = "ppv.stl"
 
 const style = {
     top: 0,
@@ -9,7 +10,8 @@ const style = {
     height: '100vh',
 }
 
-export const VisorStl = () => {
+export const VisorStl =() => {
+    
     return (
         <StlViewer
             style={style}
