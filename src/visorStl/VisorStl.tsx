@@ -64,7 +64,7 @@ export const VisorStl =() => {
                 </Card>
             </Grid>
             <Grid xs={6} md={10}>
-            <ButtonGroup Group variant="text" aria-label="text button group">
+            
             <Button onClick={() => {setpositionX(positionX+100)}}>Position X+</Button>
             <Button onClick={() => {setpositionX(positionX-100)}}>Position X-</Button>
             <Button onClick={() => {setpositionY(positionY+100)}}>Position Y+</Button>
@@ -73,7 +73,7 @@ export const VisorStl =() => {
             <Button onClick={() => {setrotateY(rotateY-100)}}>Rotation Y-</Button>
             <Button onClick={() => {setrotateX(rotateX+0.5)}}>Rotation X+</Button>
             <Button onClick={() => {setrotateX(rotateX-0.5)}}>Rotation X-</Button>
-            </ButtonGroup>
+         
 
                 <StlViewer
                 className="App-logo"
