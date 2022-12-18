@@ -7,14 +7,7 @@ import { Card, CardActionArea, CardMedia, Typography, CardContent,  ButtonGroup,
 
 
 
-const style = {
-    top: 0,
-    left: 0,
-    height: '85vh',
-    boxShadow: '1px 2px 9px gray',
-    borderRadius:'30px'
-    
-}
+
 
 
 
@@ -29,7 +22,19 @@ export const VisorStl =() => {
     const [positionY, setpositionY] = useState(-100)
     const [positionX, setpositionX] = useState(0)
     const [color, setColor] = useState("#4FA095");
+    const [BGcolor, setBGColor] = useState("#c9c9c9");
     const [stlObj, setStlObj] = useState("ppv.stl")
+
+    const style = {
+        top: 0,
+        left: 0,
+        height: '85vh',
+        boxShadow: '1px 2px 9px gray',
+        borderRadius:'30px',
+        background:BGcolor
+    }
+
+
     const modelProps = {
         color:color,
         positionX:positionX,
@@ -42,9 +47,9 @@ export const VisorStl =() => {
       
     return (
         <Grid container spacing={10}>
-            <Grid xs={12} md={2} sx={{ textAlign: "center",
-display: "block ruby" }}>
-                <HexColorPicker color={color} onChange={setColor} />
+            <Grid xs={12} md={2} >
+                <HexColorPicker style={{ marginBottom:'1rem' }} color={color} onChange={setColor} />
+                <HexColorPicker color={BGcolor} onChange={setBGColor} />
             </Grid>
             <Grid xs={12} md={10}>
 {/*             <Button onClick={() => {setpositionX(positionX+100)}}>Position X+</Button>
@@ -66,25 +71,43 @@ display: "block ruby" }}>
                 modelProps={modelProps}
                 />
             </Grid>
-            <Grid xs={12} md={10}>
-            <Card onClick={() => { setStlObj("https://storage.googleapis.com/ucloud-v3/ccab50f18fb14c91ccca300a.stl") }} sx={{ maxWidth: '100%' }}>
+            <Grid spacing={10} container xs={12} md={10} >
+            <Card  onClick={() => { setStlObj("goku.stl") }} sx={{ maxWidth: '40%',marginLeft:'77px',marginBottom:'25px' }}>
                     <CardActionArea>
-                        <CardMedia
+                        <CardMedia 
                         component="img"
                         height="140"
-                        image="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcQBEWjH7J71UEE3qhdjzc90PbCrMRPdU_RCCw&usqp=CAU"
+                        image="https://files.cults3d.com/uploaders/18182209/illustration-file/d32a852a-2bea-436a-8195-0d3f77f5ac82/image_2021-06-23_131254.png"
                         alt="Busto Spider-man"
                         />
                         <CardContent>
                         <Typography gutterBottom variant="h5" component="div">
-                            SpiderMan Busto
+                            Goku
                         </Typography>
                         <Typography variant="body2" color="text.secondary">
-                            busto de spiderman
+                            Modelo a una pieza
                         </Typography>
                         </CardContent>
                     </CardActionArea>
-                </Card>
+            </Card>
+            <Card onClick={() => { setStlObj("zoro.stl") }} sx={{ maxWidth: '40%',marginLeft:'77px',marginBottom:'25px' }}>
+                    <CardActionArea>
+                        <CardMedia
+                        component="img"
+                        height="140"
+                        image="https://files.cults3d.com/uploaders/18182209/illustration-file/cbd97095-7e50-4090-b180-94e788707f43/image_2021-06-23_125116.png"
+                        alt="Zoro una pieza"
+                        />
+                        <CardContent>
+                        <Typography gutterBottom variant="h5" component="div">
+                            Zoro
+                        </Typography>
+                        <Typography variant="body2" color="text.secondary">
+                            Modelo a una pieza
+                        </Typography>
+                        </CardContent>
+                    </CardActionArea>
+            </Card>
             </Grid>
             
 
