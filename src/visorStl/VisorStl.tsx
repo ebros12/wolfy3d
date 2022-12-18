@@ -42,9 +42,32 @@ export const VisorStl =() => {
       
     return (
         <Grid container spacing={10}>
-            <Grid xs={12} md={2}>
+            <Grid xs={12} md={2} sx={{ textAlign: "center",
+display: "block ruby" }}>
                 <HexColorPicker color={color} onChange={setColor} />
-                <Card onClick={() => { setStlObj("https://storage.googleapis.com/ucloud-v3/ccab50f18fb14c91ccca300a.stl") }} sx={{ maxWidth: '100%' }}>
+            </Grid>
+            <Grid xs={12} md={10}>
+{/*             <Button onClick={() => {setpositionX(positionX+100)}}>Position X+</Button>
+            <Button onClick={() => {setpositionX(positionX-100)}}>Position X-</Button>
+            <Button onClick={() => {setpositionY(positionY+100)}}>Position Y+</Button>
+            <Button onClick={() => {setpositionY(positionY-100)}}>Position Y-</Button>
+            <Button onClick={() => {setrotateY(rotateY+100)}}>Rotation Y+</Button>
+            <Button onClick={() => {setrotateY(rotateY-100)}}>Rotation Y-</Button>
+            <Button onClick={() => {setrotateX(rotateX+0.5)}}>Rotation X+</Button>
+            <Button onClick={() => {setrotateX(rotateX-0.5)}}>Rotation X-</Button> */}
+         
+
+                <StlViewer
+                className="App-logo"
+                style={style}
+                orbitControls
+                shadows
+                url={stlObj}
+                modelProps={modelProps}
+                />
+            </Grid>
+            <Grid xs={12} md={10}>
+            <Card onClick={() => { setStlObj("https://storage.googleapis.com/ucloud-v3/ccab50f18fb14c91ccca300a.stl") }} sx={{ maxWidth: '100%' }}>
                     <CardActionArea>
                         <CardMedia
                         component="img"
@@ -62,27 +85,6 @@ export const VisorStl =() => {
                         </CardContent>
                     </CardActionArea>
                 </Card>
-            </Grid>
-            <Grid xs={6} md={10}>
-            
-            <Button onClick={() => {setpositionX(positionX+100)}}>Position X+</Button>
-            <Button onClick={() => {setpositionX(positionX-100)}}>Position X-</Button>
-            <Button onClick={() => {setpositionY(positionY+100)}}>Position Y+</Button>
-            <Button onClick={() => {setpositionY(positionY-100)}}>Position Y-</Button>
-            <Button onClick={() => {setrotateY(rotateY+100)}}>Rotation Y+</Button>
-            <Button onClick={() => {setrotateY(rotateY-100)}}>Rotation Y-</Button>
-            <Button onClick={() => {setrotateX(rotateX+0.5)}}>Rotation X+</Button>
-            <Button onClick={() => {setrotateX(rotateX-0.5)}}>Rotation X-</Button>
-         
-
-                <StlViewer
-                className="App-logo"
-                style={style}
-                orbitControls
-                shadows
-                url={stlObj}
-                modelProps={modelProps}
-                />
             </Grid>
             
 
