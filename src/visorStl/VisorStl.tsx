@@ -50,9 +50,10 @@ export const VisorStl =() => {
 
       
     return (
-        <Grid container spacing={10}>
+        <Grid container spacing={2}>
             <Grid xs={12} md={2} container spacing={2}>
             <Grid xs={12} md={12}>
+                <Typography variant="h5">Opciones</Typography>
                 <Button onClick={() => {setoptions(!options)}}><ColorLensIcon/></Button>
                 <Button onClick={() => {setoptions2(!options2)}}><GradientIcon/></Button>
             </Grid>
@@ -91,8 +92,13 @@ export const VisorStl =() => {
                 modelProps={modelProps}
                 />
             </Grid>
-            <Grid spacing={10} container xs={12} md={10} >
-            <Card  onClick={() => { setStlObj("goku.stl") }} sx={{ maxWidth: '40%',marginLeft:'77px',marginBottom:'25px' }}>
+            <Grid spacing={2} container xs={12} md={10} >
+            <Grid xs={12}> 
+                <Typography variant="h5">Mas Diseños</Typography>
+            </Grid>
+            
+            <Card  onClick={() => { setStlObj("goku.stl") }} className="imgCard" sx={{ maxWidth: '35%',marginBottom:'25px' }}>
+              
                     <CardActionArea>
                         <CardMedia 
                         component="img"
@@ -110,7 +116,7 @@ export const VisorStl =() => {
                         </CardContent>
                     </CardActionArea>
             </Card>
-            <Card onClick={() => { setStlObj("zoro.stl") }} sx={{ maxWidth: '40%',marginLeft:'77px',marginBottom:'25px' }}>
+            <Card onClick={() => { setStlObj("zoro.stl") }} sx={{ maxWidth: '35%',marginBottom:'25px' }}>
                     <CardActionArea>
                         <CardMedia
                         component="img"
