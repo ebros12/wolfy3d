@@ -52,8 +52,11 @@ export const VisorStl =() => {
     return (
         <Grid container spacing={10}>
             <Grid xs={12} md={2} container spacing={2}>
-            <Button onClick={() => {setoptions(!options)}}><ColorLensIcon/></Button>
-            <Button onClick={() => {setoptions2(!options2)}}><GradientIcon/></Button>
+            <Grid xs={12} md={12}>
+                <Button onClick={() => {setoptions(!options)}}><ColorLensIcon/></Button>
+                <Button onClick={() => {setoptions2(!options2)}}><GradientIcon/></Button>
+            </Grid>
+
                 <Grid xs={6} md={12}>
                     
                     <Typography className={options?"":"invisible"}>Objeto</Typography>
