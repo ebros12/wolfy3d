@@ -3,8 +3,8 @@ import {StlViewer} from "react-stl-viewer";
 import { HexColorPicker } from "react-colorful";
 import Grid from '@mui/material/Unstable_Grid2';
 import { Card, CardActionArea, CardMedia, Typography, CardContent,  ButtonGroup, Button} from '@mui/material';
-
-
+import ColorLensIcon from '@mui/icons-material/ColorLens';
+import GradientIcon from '@mui/icons-material/Gradient';
 
 
 
@@ -21,9 +21,13 @@ export const VisorStl =() => {
     const [rotateY, setrotateY] = useState(0.3)
     const [positionY, setpositionY] = useState(-100)
     const [positionX, setpositionX] = useState(0)
+    
     const [color, setColor] = useState("#4FA095");
     const [BGcolor, setBGColor] = useState("#c9c9c9");
     const [stlObj, setStlObj] = useState("ppv.stl")
+
+    const [options, setoptions] = useState(false)
+    const [options2, setoptions2] = useState(false)
 
     const style = {
         top: 0,
@@ -48,8 +52,11 @@ export const VisorStl =() => {
     return (
         <Grid container spacing={10}>
             <Grid xs={12} md={2} >
-                <HexColorPicker style={{ marginBottom:'1rem' }} color={color} onChange={setColor} />
-                <HexColorPicker color={BGcolor} onChange={setBGColor} />
+                <Button onClick={() => {setoptions(!options)}}><ColorLensIcon/></Button>
+                <Button onClick={() => {setoptions2(!options2)}}><GradientIcon/></Button>
+              
+                <HexColorPicker className={options?"":"invisible"} style={{ marginBottom:'1rem' }} color={color} onChange={setColor} />
+                <HexColorPicker className={options2?"":"invisible"} color={BGcolor} onChange={setBGColor} />
             </Grid>
             <Grid xs={12} md={10}>
 {/*             <Button onClick={() => {setpositionX(positionX+100)}}>Position X+</Button>
