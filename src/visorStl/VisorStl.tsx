@@ -51,12 +51,22 @@ export const VisorStl =() => {
       
     return (
         <Grid container spacing={10}>
-            <Grid xs={12} md={2} >
-                <Button onClick={() => {setoptions(!options)}}><ColorLensIcon/></Button>
-                <Button onClick={() => {setoptions2(!options2)}}><GradientIcon/></Button>
-              
-                <HexColorPicker className={options?"":"invisible"} style={{ marginBottom:'1rem' }} color={color} onChange={setColor} />
-                <HexColorPicker className={options2?"":"invisible"} color={BGcolor} onChange={setBGColor} />
+            <Grid xs={12} md={2} container spacing={2}>
+            <Button onClick={() => {setoptions(!options)}}><ColorLensIcon/></Button>
+            <Button onClick={() => {setoptions2(!options2)}}><GradientIcon/></Button>
+                <Grid xs={6} md={12}>
+                    
+                    <Typography className={options?"":"invisible"}>Objeto</Typography>
+                    <HexColorPicker className={options?"":"invisible"} style={{ marginBottom:'1rem' }} color={color} onChange={setColor} />
+                </Grid>
+                <Grid xs={6} md={12}>
+                    
+                    <Typography className={options2?"":"invisible"}>Fondo</Typography>
+                    <HexColorPicker className={options2?"":"invisible"} color={BGcolor} onChange={setBGColor} />
+                </Grid>
+                
+                
+                
             </Grid>
             <Grid xs={12} md={10}>
 {/*             <Button onClick={() => {setpositionX(positionX+100)}}>Position X+</Button>
